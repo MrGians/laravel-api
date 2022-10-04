@@ -2275,7 +2275,7 @@ var render = function render() {
     staticClass: "card-text"
   }, [_c("small", {
     staticClass: "text-muted"
-  }, [_vm._v(_vm._s(_vm.publishedAt))])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Pubblicato da "), _c("strong", [_vm._v(_vm._s(_vm.post.author.name))]), _vm._v(" il:\n                " + _vm._s(_vm.publishedAt))])])]), _vm._v(" "), _c("div", {
     staticClass: "card-footer d-flex align-items-center justify-content-between"
   }, [_c("div", [_c("h6", [_vm._v("Categoria")]), _vm._v(" "), _c("span", {
     "class": "badge badge-".concat(_vm.post.category ? _vm.post.category.color : "secondary")

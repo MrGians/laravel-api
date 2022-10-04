@@ -5,7 +5,10 @@
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.content }}</p>
             <p class="card-text">
-                <small class="text-muted">{{ publishedAt }}</small>
+                <small class="text-muted"
+                    >Pubblicato da <strong>{{ post.author.name }}</strong> il:
+                    {{ publishedAt }}</small
+                >
             </p>
         </div>
         <div
