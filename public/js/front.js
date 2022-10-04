@@ -2275,7 +2275,19 @@ var render = function render() {
     staticClass: "card-text"
   }, [_c("small", {
     staticClass: "text-muted"
-  }, [_vm._v(_vm._s(_vm.publishedAt))])])])]);
+  }, [_vm._v(_vm._s(_vm.publishedAt))])])]), _vm._v(" "), _c("div", {
+    staticClass: "card-footer d-flex align-items-center justify-content-between"
+  }, [_c("div", [_c("h6", [_vm._v("Categoria")]), _vm._v(" "), _c("span", {
+    "class": "badge badge-".concat(_vm.post.category ? _vm.post.category.color : "secondary")
+  }, [_vm._v("\n                " + _vm._s(_vm.post.category ? _vm.post.category.label : "Nessuna") + "\n            ")])]), _vm._v(" "), _c("div", [_c("h6", [_vm._v("Tags")]), _vm._v(" "), _vm.post.tags.length ? _c("div", _vm._l(_vm.post.tags, function (tag) {
+    return _c("span", {
+      key: tag.id,
+      staticClass: "badge badge-pill text-white",
+      style: "background-color: ".concat(tag.color)
+    }, [_vm._v(_vm._s(tag.label))]);
+  }), 0) : _c("span", {
+    staticClass: "badge badge-pill text-white bg-dark"
+  }, [_vm._v("N/D")])])])]);
 };
 
 var staticRenderFns = [];

@@ -8,6 +8,35 @@
                 <small class="text-muted">{{ publishedAt }}</small>
             </p>
         </div>
+        <div
+            class="card-footer d-flex align-items-center justify-content-between"
+        >
+            <div>
+                <h6>Categoria</h6>
+                <span
+                    :class="`badge badge-${
+                        post.category ? post.category.color : 'secondary'
+                    }`"
+                >
+                    {{ post.category ? post.category.label : "Nessuna" }}
+                </span>
+            </div>
+            <div>
+                <h6>Tags</h6>
+                <div v-if="post.tags.length">
+                    <span
+                        v-for="tag in post.tags"
+                        :key="tag.id"
+                        class="badge badge-pill text-white"
+                        :style="`background-color: ${tag.color}`"
+                        >{{ tag.label }}</span
+                    >
+                </div>
+                <span class="badge badge-pill text-white bg-dark" v-else
+                    >N/D</span
+                >
+            </div>
+        </div>
     </div>
 </template>
 
