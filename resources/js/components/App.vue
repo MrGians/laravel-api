@@ -12,7 +12,7 @@ import AppHeader from "./AppHeader";
 import PostsPage from "./posts/PostsPage";
 export default {
     name: "App",
-    components: { AppHeader, PostsPage, PostsPage },
+    components: { AppHeader, PostsPage },
     data() {
         return {
             title: "Boolpress",
