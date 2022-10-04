@@ -1,9 +1,19 @@
 <template>
-    <div class="title m-b-md">Guest Home | WIP</div>
+    <div class="content">
+        <AppHeader :title="title" />
+        <main class="container"></main>
+    </div>
 </template>
 
 <script>
+import AppHeader from "./AppHeader";
 export default {
     name: "App",
+    components: { AppHeader },
+    data() {
+        return {
+            title: "Boolpress",
+        };
+    },
 };
 </script>
