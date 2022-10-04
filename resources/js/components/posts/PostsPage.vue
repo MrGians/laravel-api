@@ -1,31 +1,31 @@
 <template>
     <section id="post-list" class="mt-4">
-        <h2 class="text-center">Lista dei Post</h2>
-        <div v-if="isLoading">
-            <AppLoader />
+        <h2 class="text-center mb-4">Lista dei Post</h2>
+        <AppLoader v-if="isLoading" />
+        <div v-else-if="error">
+            <AppError :error="error" />
         </div>
         <div v-else>
-            <div class="row">
-                <div v-if="postsList.length">
+            <div v-if="postsList && postsList.length">
+                <div class="row">
                     <div class="col-6" v-for="post in postsList" :key="post.id">
-                        <!-- TODO <PostCard :post="post" /> -->
+                        <PostCard :post="post" />
                     </div>
                 </div>
-                <div class="col" v-else>
-                    <h4>Non è presente nessun Post</h4>
-                </div>
             </div>
+            <h4 class="text-center my-3" v-else>Non è presente nessun Post</h4>
         </div>
     </section>
 </template>
 
 <script>
 import axios from "axios";
-import AppLoader from "../AppLoader";
-import PostCard from "./PostCard";
+import AppLoader from "./../AppLoader.vue";
+import AppError from "./../AppError.vue";
+import PostCard from "./PostCard.vue";
 export default {
     name: "PostPage",
-    components: { AppLoader, PostCard },
+    components: { AppLoader, PostCard, AppError },
     data() {
         return {
             api: {
@@ -33,6 +33,7 @@ export default {
             },
             postsList: [],
             isLoading: false,
+            error: null,
         };
     },
     methods: {
@@ -44,9 +45,12 @@ export default {
                 .then((res) => {
                     this.postsList = res.data.data;
                 })
-                .catch((err) => {})
+                .catch((err) => {
+                    this.error = "Fetch Posts Error";
+                })
                 .then(() => {
                     this.isLoading = false;
+                    console.log("Chiamata terminata");
                 });
         },
     },
