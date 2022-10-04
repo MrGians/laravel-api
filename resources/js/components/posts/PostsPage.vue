@@ -46,8 +46,10 @@ export default {
         fetchPosts(page = 1) {
             this.isLoading = true;
 
+            const { endpoint } = this.api;
+
             axios
-                .get(`${this.api.endpoint}?page=${page}`)
+                .get(`${endpoint}?page=${page}`)
                 .then((res) => {
                     const { current_page, last_page, data } = res.data;
                     this.postsList = data;

@@ -2081,7 +2081,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       this.isLoading = true;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(this.api.endpoint, "?page=").concat(page)).then(function (res) {
+      var endpoint = this.api.endpoint;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(endpoint, "?page=").concat(page)).then(function (res) {
         var _res$data = res.data,
             current_page = _res$data.current_page,
             last_page = _res$data.last_page,
