@@ -37,7 +37,6 @@ export default {
                 .get(`${endpoint}${this.$route.params.slug}`)
                 .then((res) => {
                     this.post = res.data;
-                    console.log(res.data);
                 })
                 .catch((err) => {
                     this.error = "Fetch Post Detail Error";

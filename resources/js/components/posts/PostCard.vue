@@ -10,12 +10,17 @@
                     {{ publishedAt }}</small
                 >
             </p>
-            <div>
+            <div class="actions">
                 <router-link
+                    class="btn btn-warning"
+                    v-if="$route.name !== 'post-detail'"
                     :to="{ name: 'post-detail', params: { slug: post.slug } }"
                 >
                     Vedi Post
                 </router-link>
+                <button class="btn btn-warning" v-else @click="$router.back()">
+                    Torna Indietro
+                </button>
             </div>
         </div>
         <div
@@ -72,8 +77,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .card {
     height: calc(100% - 1rem);
+
+    & .actions {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 }
 </style>
