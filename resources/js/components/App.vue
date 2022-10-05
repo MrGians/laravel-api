@@ -2,14 +2,14 @@
     <div class="content">
         <AppHeader :title="title" />
         <main class="container">
-            <PostsPage />
+            <router-view></router-view>
         </main>
     </div>
 </template>
 
 <script>
 import AppHeader from "./AppHeader";
-import PostsPage from "./posts/PostsPage";
+import PostsPage from "./pages/PostsPage";
 export default {
     name: "App",
     components: { AppHeader, PostsPage },

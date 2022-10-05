@@ -11,7 +11,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="#">Home</a>
+                <router-link
+                    class="nav-link"
+                    v-for="link in links"
+                    :key="link.route_name"
+                    :to="{ name: link.route_name }"
+                    :exact="link.route_name === 'home'"
+                    >{{ link.page_name }}</router-link
+                >
             </div>
         </div>
     </nav>
@@ -20,6 +27,15 @@
 <script>
 export default {
     name: "AppHeader",
+    data() {
+        return {
+            links: [
+                { route_name: "home", page_name: "Home" },
+                { route_name: "posts", page_name: "Posts" },
+                { route_name: "about", page_name: "About" },
+            ],
+        };
+    },
     props: {
         title: String,
     },
