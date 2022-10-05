@@ -13,9 +13,11 @@
 
 <script>
 import PostCard from "../posts/PostCard";
+import AppLoader from "../AppLoader";
+import AppError from "../AppError";
 export default {
     name: "PostDetailPage",
-    components: { PostCard },
+    components: { PostCard, AppLoader, AppError },
     data() {
         return {
             post: null,

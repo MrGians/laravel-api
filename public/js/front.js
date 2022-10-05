@@ -2073,11 +2073,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _posts_PostCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../posts/PostCard */ "./resources/js/components/posts/PostCard.vue");
+/* harmony import */ var _AppLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../AppLoader */ "./resources/js/components/AppLoader.vue");
+/* harmony import */ var _AppError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../AppError */ "./resources/js/components/AppError.vue");
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostDetailPage",
   components: {
-    PostCard: _posts_PostCard__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PostCard: _posts_PostCard__WEBPACK_IMPORTED_MODULE_0__["default"],
+    AppLoader: _AppLoader__WEBPACK_IMPORTED_MODULE_1__["default"],
+    AppError: _AppError__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
