@@ -64,3 +64,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.card {
+    height: calc(100% - 1rem);
+}
+</style>
