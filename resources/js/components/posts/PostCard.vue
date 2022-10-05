@@ -10,6 +10,13 @@
                     {{ publishedAt }}</small
                 >
             </p>
+            <div>
+                <router-link
+                    :to="{ name: 'post-detail', params: { slug: post.slug } }"
+                >
+                    Vedi Post
+                </router-link>
+            </div>
         </div>
         <div
             class="card-footer d-flex align-items-center justify-content-between"
